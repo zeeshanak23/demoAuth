@@ -26,6 +26,18 @@ model Account {
   @@unique([provider, providerAccountId])
 }
 
+model personalDetail {
+  id  Int @id @default(autoincrement())
+  name  String
+  phoneNumber Int
+  age Int
+  email String
+  about String @db.Text()
+  createdAt DateTime  @default(now())
+  UpdatedAt DateTime  @updatedAt
+
+  @@unique([email,phoneNumber])
+}
 model Session {
   id           String   @id @default(cuid())
   sessionToken String   @unique
