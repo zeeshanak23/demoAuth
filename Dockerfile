@@ -1,32 +1,32 @@
-FROM ubuntu:22.04
+# FROM ubuntu:22.04
 
-RUN mkdir -p /website 
+# RUN mkdir -p /website 
 
-WORKDIR /app
+# WORKDIR /app
 
-COPY . .
+# COPY . .
 
-RUN apt-get update
+# RUN apt-get update
 
-RUN apt-get install -y curl
+# RUN apt-get install curl -y
 
-RUN curl -s https://deb.nodesource.com/setup_18.x | bash
+# RUN curl -s https://deb.nodesource.com/setup_18.x | bash
 
-RUN apt-get install -y nodejs
+# RUN apt-get install -y nodejs
 
-RUN apt-get install git -y  
+# RUN apt-get install git -y  
 
-RUN git clone https://zeeshanak23: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@github.com/zeeshanak23/demoAuth.git
+# RUN git clone https://zeeshanak23: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@github.com/zeeshanak23/demoAuth.git
 
-RUN cd demoAuth/
+# RUN cd demoAuth/
 
-RUN npm install -g npm@9.6.7
-RUN npm install
-RUN npm install next-auth
-RUN npm install @prisma/client @auth/prisma-adapter
-RUN npm install prisma --save-dev
-RUN prisma generate
-EXPOSE 3000
+# RUN npm install -g npm@9.6.7
+# RUN npm install
+# RUN npm install next-auth
+# RUN npm install @prisma/client @auth/prisma-adapter
+# RUN npm install prisma --save-dev
+# RUN npx prisma generate
+# EXPOSE 3000
 
 
-CMD ["npm","run","dev"]
+# CMD ["npm","run","dev"]
